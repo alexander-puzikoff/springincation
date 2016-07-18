@@ -49,7 +49,7 @@ public class SpitterController {
 
 
     @RequestMapping(method = RequestMethod.POST)
-    public String addSpitterForm(@Valid @ModelAttribute("spitter")  Spitter spitter,@RequestParam(value = "image", required = false) MultipartFile image ,BindingResult bindingResult) {
+    public String addSpitterForm(@Valid Spitter spitter, BindingResult bindingResult, @RequestParam(value = "image", required = false) MultipartFile image) {
         if (bindingResult.hasErrors()) {
             return "spitters/edit";
         }
