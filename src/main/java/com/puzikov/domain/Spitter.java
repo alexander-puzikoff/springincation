@@ -16,30 +16,24 @@ public class Spitter {
 
     @Size(min = 6, max = 20, message = "Password must be between 6 and 20 characters long")
     private String password;
-
+    @Size(min = 3, max = 20, message = "Full name must be between 3 and 20 characters long")
+    @Pattern(regexp = "^[a-zA-Z0-9]$", message = "Full name must consist only from letters and numbers")
     private String fullName;
-    @Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" ,
+    @Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",
             message = "Invalid email address.")
     private String email;
 
     private boolean emailUpdates;
-    private String image;
 
     public void setEmailUpdates(boolean emailUpdates) {
         this.emailUpdates = emailUpdates;
     }
 
-    public void setImage(String img) {
-        this.image = img;
-    }
 
     public boolean isEmailUpdates() {
         return emailUpdates;
     }
 
-    public String getImage() {
-        return image;
-    }
 
     public String getFullName() {
         return fullName;
@@ -52,7 +46,8 @@ public class Spitter {
     public String getEmail() {
         return email;
     }
-
+    @Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",
+            message = "Invalid email address.")
     public void setEmail(String email) {
         this.email = email;
     }
@@ -69,11 +64,17 @@ public class Spitter {
         return name;
     }
 
+    @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters long")
+    @Pattern(regexp = "^[a-zA-Z0-9]$", message = "Username must consist only from letters and numbers")
     public void setName(String name) {
         this.name = name;
     }
 
     public Spitter(String name) {
         this.name = name;
+    }
+
+
+    public Spitter() {
     }
 }

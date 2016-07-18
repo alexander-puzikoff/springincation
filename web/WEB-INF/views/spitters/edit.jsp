@@ -45,8 +45,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <th><label for="image">Profileimage:</label></th>
-                    <td><input name="image" type="file"/>
+                    <th><label for="image">Profile image:</label></th>
+                    <td><input name="image" type="file"/></td>
                 </tr>
                 <tr>
                     <td>
