@@ -17,6 +17,9 @@
     <definition name="spittles/list" extends="template">
         <put-attribute name="content" value="/WEB-INF/views/list.jsp"/>
 
+    <definition name="spittles/view" extends="template">
+        <put-attribute name="content" value="/WEB-INF/views/view.jsp"/>
+
     </definition>
     <definition name="spitters/edit" extends="template">
         <put-attribute name="content"

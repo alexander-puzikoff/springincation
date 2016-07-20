@@ -64,7 +64,7 @@ public class SpitterController {
             return "spitters/edit";
         }
         spitterService.saveSpitter(spitter);
-        return "redirect:/spitters/" + spitter.getName();
+        return "redirect:/spitter/" + spitter.getName();
     }
 
     private void saveImage(String filename, MultipartFile image) {
@@ -83,7 +83,7 @@ public class SpitterController {
         }
     }
 
-    @RequestMapping(value = "/${username}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{username}", method = RequestMethod.GET)
     public String showSpitterProfile(@PathVariable String username, Model model) {
         model.addAttribute(spitterService.getSpitter(username));
         return "spitters/view";

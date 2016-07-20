@@ -10,14 +10,14 @@ import javax.validation.constraints.Size;
  */
 public class Spitter {
     @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters long")
-    @Pattern(regexp = "^[a-zA-Z0-9]$", message = "Username must consist only from letters and numbers")
+    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Username must consist only from letters and numbers")
     private String name;
 
 
     @Size(min = 6, max = 20, message = "Password must be between 6 and 20 characters long")
     private String password;
     @Size(min = 3, max = 20, message = "Full name must be between 3 and 20 characters long")
-    @Pattern(regexp = "^[a-zA-Z0-9]$", message = "Full name must consist only from letters and numbers")
+    @Pattern(regexp = "^[a-zA-Z0-9]+$", message = "Full name must consist only from letters and numbers")
     private String fullName;
     @Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",
             message = "Invalid email address.")
@@ -46,8 +46,7 @@ public class Spitter {
     public String getEmail() {
         return email;
     }
-    @Pattern(regexp = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",
-            message = "Invalid email address.")
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -64,8 +63,6 @@ public class Spitter {
         return name;
     }
 
-    @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters long")
-    @Pattern(regexp = "^[a-zA-Z0-9]$", message = "Username must consist only from letters and numbers")
     public void setName(String name) {
         this.name = name;
     }
